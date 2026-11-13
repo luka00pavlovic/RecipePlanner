@@ -4,7 +4,7 @@
 
 A web app where a user keeps their recipes, plans meals for the week, and gets a
 generated shopping list. Built as a portfolio project to show clean, tested,
-production-style C#/.NET code — not to compete with commercial apps.
+production-style C#/.NET code, not to compete with commercial apps.
 
 ## Tech stack
 
@@ -31,7 +31,7 @@ RecipePlanner.Web ──HTTP──▶ RecipePlanner.Api
 
 Dependencies point inward: Domain knows nothing about EF Core or HTTP.
 
-## MVP (v1.0) — must have
+## MVP (v1.0)
 
 1. **Recipes CRUD** — name, description, servings, prep/cook time, instructions,
    ingredient lines (name, quantity, unit). Validation on create/update.
@@ -45,7 +45,7 @@ Dependencies point inward: Domain knows nothing about EF Core or HTTP.
 7. **Tests** — unit tests for domain rules, integration tests for each endpoint.
 8. **CI** green on `main`, README with screenshots and setup steps.
 
-## Stretch goals (v1.x) — nice to have
+## Stretch goals (v1.x) 
 
 - User accounts (ASP.NET Core Identity) so each user has their own recipes
 - Tags / categories (vegetarian, quick, dessert…) and favourites
@@ -55,11 +55,6 @@ Dependencies point inward: Domain knows nothing about EF Core or HTTP.
 - Nutrition totals per day using an external API
 - Docker Compose with PostgreSQL; deploy to Azure App Service or Fly.io
 
-## Out of scope
-
-- Native mobile apps
-- Social features (sharing, comments, ratings)
-- Payments, multi-tenant/business use
 
 ## Milestones
 

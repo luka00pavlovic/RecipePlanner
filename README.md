@@ -1,6 +1,6 @@
 # Recipe Planner
 
-[![CI](https://github.com/OWNER/RecipePlanner/actions/workflows/ci.yml/badge.svg)](https://github.com/OWNER/RecipePlanner/actions/workflows/ci.yml)
+[![CI](https://github.com/luka00pavlovic/RecipePlanner/actions/workflows/ci.yml/badge.svg)](https://github.com/luka00pavlovic/RecipePlanner/actions/workflows/ci.yml)
 
 Store your recipes, plan the week's meals, and get a shopping list generated automatically.
 Built with **.NET 10**, **ASP.NET Core**, **Blazor** and **EF Core**.
@@ -40,6 +40,3 @@ dotnet run --project src/RecipePlanner.Api     # API + OpenAPI at /openapi/v1.js
 dotnet run --project src/RecipePlanner.Web     # Blazor UI
 ```
 
-## License
-
-MIT — see [LICENSE](LICENSE).
