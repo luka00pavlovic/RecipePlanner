@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/RecipePlanner.Api/RecipePlanner.Api.csproj" />
+    <Project Path="src/RecipePlanner.Application/RecipePlanner.Application.csproj" />
+    <Project Path="src/RecipePlanner.Domain/RecipePlanner.Domain.csproj" />
+    <Project Path="src/RecipePlanner.Infrastructure/RecipePlanner.Infrastructure.csproj" />
+    <Project Path="src/RecipePlanner.Web/RecipePlanner.Web.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/RecipePlanner.IntegrationTests/RecipePlanner.IntegrationTests.csproj" />
+    <Project Path="tests/RecipePlanner.UnitTests/RecipePlanner.UnitTests.csproj" />
+  </Folder>
+</Solution>

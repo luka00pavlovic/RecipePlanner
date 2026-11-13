@@ -1,0 +1,6 @@
+@RecipePlanner.Api_HostAddress = http://localhost:5010
+
+GET {{RecipePlanner.Api_HostAddress}}/health
+Accept: application/json
+
+###
