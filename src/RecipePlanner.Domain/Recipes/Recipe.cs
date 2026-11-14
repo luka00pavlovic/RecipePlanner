@@ -17,14 +17,28 @@ public class Recipe
     public string Name { get; private set; } = string.Empty;
     public string? Description { get; private set; }
     public int Servings { get; private set; }
-    public int PrepMinutes { get; set; }
-    public int CookMinutes { get; set; }
-    public string Instructions { get; set; } = string.Empty;
+    public int PrepMinutes { get; private set; }
+    public int CookMinutes { get; private set; }
+    public string Instructions { get; private set; } = string.Empty;
     public DateTime CreatedAtUtc { get; private set; } = DateTime.UtcNow;
 
     public IReadOnlyList<RecipeIngredient> Ingredients => _ingredients;
 
     public int TotalMinutes => PrepMinutes + CookMinutes;
+
+    public void SetTimes(int prepMinutes, int cookMinutes)
+    {
+        ArgumentOutOfRangeException.ThrowIfNegative(prepMinutes);
+        ArgumentOutOfRangeException.ThrowIfNegative(cookMinutes);
+        PrepMinutes = prepMinutes;
+        CookMinutes = cookMinutes;
+    }
+
+    public void SetInstructions(string? instructions) =>
+    Instructions = instructions?.Trim() ?? string.Empty;
+
+    public void SetDescription(string? description) =>
+        Description = string.IsNullOrWhiteSpace(description) ? null : description.Trim();
 
     public void Rename(string name)
     {
