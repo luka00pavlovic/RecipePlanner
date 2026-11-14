@@ -35,7 +35,7 @@ public class Recipe
     }
 
     public void SetInstructions(string? instructions) =>
-    Instructions = instructions?.Trim() ?? string.Empty;
+        Instructions = instructions?.Trim() ?? string.Empty;
 
     public void SetDescription(string? description) =>
         Description = string.IsNullOrWhiteSpace(description) ? null : description.Trim();
@@ -57,15 +57,20 @@ public class Recipe
     public void AddIngredient(string name, decimal quantity, string unit) =>
         _ingredients.Add(new RecipeIngredient(name, quantity, unit));
 
+    public void ReplaceIngredients(IEnumerable<RecipeIngredient> ingredients)
+    {
+        _ingredients.Clear();
+        _ingredients.AddRange(ingredients);
+    }
+
     /// <summary>Returns the ingredient list scaled to a different number of servings.</summary>
     public IReadOnlyList<RecipeIngredient> ScaleTo(int servings)
     {
         if (servings <= 0)
             throw new ArgumentOutOfRangeException(nameof(servings), "Servings must be positive.");
 
-        var factor = (decimal)servings / Servings;
         return _ingredients
-            .Select(i => i with { Quantity = Math.Round(i.Quantity * factor, 2) })
+            .Select(i => i with { Quantity = i.Quantity * servings / Servings })
             .ToList();
     }
 }
