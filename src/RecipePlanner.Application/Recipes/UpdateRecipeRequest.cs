@@ -8,4 +8,4 @@ public record UpdateRecipeRequest(
     int PrepMinutes,
     int CookMinutes,
     string? Instructions,
-    IReadOnlyList<IngredientDto> Ingredients);
+    IReadOnlyList<IngredientDto> Ingredients) : IRecipeRequest;
