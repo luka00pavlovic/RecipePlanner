@@ -1,9 +1,11 @@
+using RecipePlanner.Application;
 using RecipePlanner.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddOpenApi();
 builder.Services.AddHealthChecks();
+builder.Services.AddApplication();
 builder.Services.AddInfrastructure(
     builder.Configuration.GetConnectionString("RecipePlanner") ?? "Data Source=recipeplanner.db");
 
