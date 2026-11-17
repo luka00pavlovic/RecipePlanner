@@ -66,7 +66,7 @@ Dependencies point inward: Domain knows nothing about EF Core or HTTP.
 | 3 | Meal plans             | API + weekly calendar view in the UI                             |
 | 4 | Shopping list          | Generation + merging logic with unit tests, printable view       |
 | 5 | Polish & ship          | Seed data, screenshots, error handling, deployed demo link       |
-| 6 | Stretch                | Pick 1–2 stretch goals (Identity is the most valuable on a CV)   |
+| 6 | Stretch                | Pick 1–2 stretch goals                                           |
 
 Each milestone maps to a GitHub milestone, with one issue per feature and one
 branch + pull request per issue.

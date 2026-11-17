@@ -10,7 +10,7 @@ public class Recipe
     {
         Rename(name);
         SetServings(servings);
-        Description = description;
+        SetDescription(description);
     }
 
     public Guid Id { get; private set; } = Guid.NewGuid();
