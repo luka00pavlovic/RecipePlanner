@@ -31,7 +31,7 @@ public class RecipePlannerDbContext(DbContextOptions<RecipePlannerDbContext> opt
         {
             plan.HasKey(p => p.Id);
             plan.Property(p => p.Name).HasMaxLength(200).IsRequired();
-            plan.HasMany(p => p.Entries).WithOne().HasForeignKey("MealPlanId").OnDelete(DeleteBehavior.Cascade);
+            plan.HasMany(p => p.Entries).WithOne().HasForeignKey("MealPlanId").IsRequired().OnDelete(DeleteBehavior.Cascade);
             plan.Navigation(p => p.Entries).UsePropertyAccessMode(PropertyAccessMode.Field);
         });
 

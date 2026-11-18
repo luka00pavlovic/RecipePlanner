@@ -1,5 +1,7 @@
+using Microsoft.EntityFrameworkCore;
 using RecipePlanner.Application;
 using RecipePlanner.Infrastructure;
+using RecipePlanner.Infrastructure.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,13 +9,16 @@ builder.Services.AddOpenApi();
 builder.Services.AddHealthChecks();
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(
-    builder.Configuration.GetConnectionString("RecipePlanner") ?? "Data Source=recipeplanner.db");
+    builder.Configuration.GetConnectionString("RecipePlanner") ?? throw new InvalidOperationException("Connection string 'RecipePlanner' not found."));
 
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+
+    using var scope = app.Services.CreateScope();
+    scope.ServiceProvider.GetRequiredService<RecipePlannerDbContext>().Database.Migrate();
 }
 
 app.UseHttpsRedirection();
